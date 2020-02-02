@@ -3,7 +3,7 @@ import UserWrapper from './components/user-wrapper.riot'
 import UserWrapperWithoutLoader from './components/user-wrapper-without-loader.riot'
 import {component} from 'riot'
 import {expect} from 'chai'
-import lazy from '../'
+import lazy from '../index.next'
 
 const defer = () => Promise.resolve().then.bind(Promise.resolve())
 
