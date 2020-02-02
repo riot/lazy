@@ -66,7 +66,6 @@ Lazy loading Riot.js components can be particularly effectiv combined with [`@ri
 </app>
 ```
 
-
 [travis-image]:https://img.shields.io/travis/riot/lazy.svg?style=flat-square
 [travis-url]:https://travis-ci.org/riot/lazy
 
@@ -80,5 +79,5 @@ Lazy loading Riot.js components can be particularly effectiv combined with [`@ri
 [coverage-image]:https://img.shields.io/coveralls/riot/lazy/master.svg?style=flat-square
 [coverage-url]:https://coveralls.io/github/riot/lazy/?branch=master
 
-[codeclimate-image]:https://api.codeclimate.com/v1/badges/1487b171ba4409b5c302/maintainability
-[codeclimate-url]:https://codeclimate.com/github/riot/lazy
+[codeclimate-image]:https://api.codeclimate.com/v1/badges/be8992e6e7549e6b72a1/maintainability
+[codeclimate-url]:https://codeclimate.com/github/riot/lazy/maintainability
