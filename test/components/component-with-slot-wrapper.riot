@@ -1,0 +1,17 @@
+<component-with-slot-wrapper>
+  <component-with-slot>
+    <p>{props.greeting}</p>
+  </component-with-slot>
+
+  <script>
+    import Loader from './loader'
+    import ComponentWithSlot from './component-with-slot'
+    import lazy from '../../'
+
+    export default {
+      components: {
+        ComponentWithSlot: lazy(Loader, () => Promise.resolve(ComponentWithSlot))
+      }
+    }
+  </script>
+</component-with-slot-wrapper>

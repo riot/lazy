@@ -1,0 +1,15 @@
+<user-wrapper-without-loader>
+  <user name={props.name}/>
+
+  <script>
+    import Loader from './loader'
+    import User from './user'
+    import lazy from '../../'
+
+    export default {
+      components: {
+        user: lazy(() => Promise.resolve(User))
+      }
+    }
+  </script>
+</user-wrapper-without-loader>

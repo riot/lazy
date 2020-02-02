@@ -1,0 +1,38 @@
+{
+  "name": "@riotjs/lazy",
+  "version": "0.0.0",
+  "description": "Lazy components loader for Riot.js",
+  "main": "lazy.js",
+  "jsnext:main": "index.next.js",
+  "module": "index.next.js",
+  "files": [
+    "lazy.js",
+    "lazy.min.js"
+  ],
+  "scripts": {
+    "lint": "eslint index.next.js test/**/*.js rollup.config.js",
+    "build": "rollup -c",
+    "cov-submit": "LAZY_COV=1 cat ./coverage/lcov.info | coveralls",
+    "cov-report": "nyc report --reporter=lcov --reporter=text",
+    "pretest": "npm run build",
+    "test": "npm run lint && nyc mocha -r esm -r test/setup.js test/index.js",
+    "prepublishOnly": "npm test"
+  },
+  "author": "Gianluca Guarini <gianluca.guarini@gmail.com> (http://gianlucaguarini.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "@riotjs/ssr": "^4.2.0",
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.9",
+    "eslint": "^6.8.0",
+    "eslint-config-riot": "^3.0.0",
+    "esm": "^3.2.25",
+    "jsdom": "16.1.0",
+    "jsdom-global": "3.0.2",
+    "mocha": "^7.0.1",
+    "nyc": "^15.0.0",
+    "riot": "^4.8.9",
+    "rollup": "^1.31.0",
+    "rollup-plugin-terser": "^5.2.0"
+  }
+}
