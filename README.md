@@ -42,7 +42,7 @@ You can lazy load any component providing a fallback component during the loadin
 </app>
 ```
 
-Lazy loading Riot.js components can be particularly effectiv combined with [`@riotjs/route`](https://github.com/riot/route)
+Lazy loading Riot.js components is recommended combined with [`@riotjs/route`](https://github.com/riot/route)
 
 ```riot
 <app>
