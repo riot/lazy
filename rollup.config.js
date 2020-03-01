@@ -1,3 +1,4 @@
+import babel from 'rollup-plugin-babel'
 import { terser } from 'rollup-plugin-terser'
 
 const globals = { 'riot': 'riot' }
@@ -8,6 +9,9 @@ export default {
   plugins: [
     terser({
       include: [/^.+\.min\.js$/]
+    }),
+    babel({
+      presets: ['@riotjs/babel-preset']
     })
   ],
   output: [
