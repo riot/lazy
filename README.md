@@ -18,6 +18,7 @@ npm i -S @riotjs/lazy
 
 ## Documentation
 
+The following examples show how you can lazy load Riot.js components using modern javascript bundlers like [Webpack](https://webpack.js.org/) or [Rollup](https://rollupjs.org/).
 
 You can lazy load any component providing a fallback component during the loading process for example:
 
