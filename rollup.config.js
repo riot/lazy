@@ -7,9 +7,6 @@ export default {
   input: 'index.next.js',
   external: ['riot'],
   plugins: [
-    terser({
-      include: [/^.+\.min\.js$/]
-    }),
     babel({
       presets: ['@riotjs/babel-preset']
     })
@@ -25,7 +22,8 @@ export default {
       name: 'rawth',
       file: 'lazy.min.js',
       format: 'umd',
-      globals
+      globals,
+      plugins: [terser()]
     }
   ]
 }
