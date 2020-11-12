@@ -19,7 +19,7 @@ export default {
       globals
     },
     {
-      name: 'rawth',
+      name: 'lazy',
       file: 'lazy.min.js',
       format: 'umd',
       globals,
