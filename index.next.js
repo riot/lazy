@@ -18,7 +18,10 @@ lazy.export = function lazyExport(Loader, Component) {
     mount(el, parentScope) {
       this.el = el
       this.isMounted = true
-      const mount = () => this.mountLazyComponent(parentScope)
+      const mount = () => {
+        this.mountLazyComponent(parentScope)
+        this.el.dispatchEvent(new Event("load"))
+      }
 
       if (cachedComponent) {
         mount()
