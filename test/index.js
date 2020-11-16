@@ -1,3 +1,4 @@
+import ComponentWithLoadListener from './components/component-with-load-listener.riot'
 import ComponentWithSlotWrapper from './components/component-with-slot-wrapper.riot'
 import UserWrapper from './components/user-wrapper.riot'
 import UserWrapperWithoutLoader from './components/user-wrapper-without-loader.riot'
@@ -57,6 +58,19 @@ describe('lazy', () => {
 
     const p = el.$('p')
     expect(p.innerHTML).to.be.equal('Hello')
+
+    el.unmount()
+  })
+
+  it('Lazy loaded component can dispatch load event', async function() {
+    const div = document.createElement('div')
+    const el = component(ComponentWithLoadListener)(div, {
+      name: 'Kal'
+    })
+
+    await defer()
+
+    expect(el._loaded).to.be.equal(true)
 
     el.unmount()
   })
