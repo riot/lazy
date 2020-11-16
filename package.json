@@ -23,19 +23,19 @@
   "license": "MIT",
   "devDependencies": {
     "@riotjs/babel-preset": "^1.0.0",
-    "@riotjs/ssr": "^4.2.1",
+    "@riotjs/ssr": "^5.0.0",
     "chai": "^4.2.0",
     "coveralls": "^3.1.0",
-    "eslint": "^7.5.0",
+    "eslint": "^7.13.0",
     "eslint-config-riot": "^3.0.0",
     "esm": "^3.2.25",
-    "jsdom": "16.3.0",
+    "jsdom": "16.4.0",
     "jsdom-global": "3.0.2",
-    "mocha": "^8.0.1",
+    "mocha": "^8.2.1",
     "nyc": "^15.1.0",
-    "riot": "^4.13.4",
-    "rollup": "^2.23.0",
+    "riot": "^5.0.0",
+    "rollup": "^2.33.2",
     "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-terser": "^6.1.0"
+    "rollup-plugin-terser": "^7.0.2"
   }
 }
