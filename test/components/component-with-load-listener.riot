@@ -1,5 +1,5 @@
-<user-wrapper-without-loader>
-  <user name={props.name}/>
+<component-with-load-listener>
+  <user name={props.name} onload={ loaded }/>
 
   <script>
     import User from './user'
@@ -8,7 +8,11 @@
     export default {
       components: {
         user: lazy(() => Promise.resolve(User))
+      },
+      _loaded: false,
+      loaded() {
+        this._loaded = true;
       }
     }
   </script>
-</user-wrapper-without-loader>
+</component-with-load-listener>

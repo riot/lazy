@@ -43,6 +43,37 @@ You can lazy load any component providing a fallback component during the loadin
 </app>
 ```
 
+When the component is loaded, Lazy will dispatch a 'load' event from the component root element.
+
+This can be useful e.g. for removing splashscreen on app start:
+
+```riot
+<app>
+  <user name={state.name} onload={ removeSplashscreen }/>
+
+  <script>
+    import lazy from '@riotjs/lazy'
+    import Loader from './my-loader.riot'
+
+    export default {
+      components: {
+        // use a fallback loader
+        user: lazy(Loader, () => import('./user.riot'))
+      },
+      removeSplashscreen() {
+        // the splashscreen, in this example, is create in pure html
+        // in the main page, to avoid blank page loading
+        const splashscreen = document.querySelector("#splashscreen");
+        if (!splashscreen) {
+          return;
+        }
+        splashcreen.parentElement.removeChild(splashscreen);
+      }
+    }
+  </script>
+</app>
+```
+
 Lazy loading Riot.js components is recommended combined with [`@riotjs/route`](https://github.com/riot/route)
 
 ```riot
