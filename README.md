@@ -1,6 +1,6 @@
 # Riot Lazy
 
-[![Build Status][travis-image]][travis-url] [![Code Quality][codeclimate-image]][codeclimate-url] [![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-image]][npm-url] [![MIT License][license-image]][license-url] [![Coverage Status][coverage-image]][coverage-url]
+[![Build Status][ci-image]][ci-url] [![Code Quality][codeclimate-image]][codeclimate-url] [![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-image]][npm-url] [![MIT License][license-image]][license-url] [![Coverage Status][coverage-image]][coverage-url]
 
 > Lazy wrapper for Riot.js components
 
@@ -98,8 +98,8 @@ Lazy loading Riot.js components is recommended combined with [`@riotjs/route`](h
 </app>
 ```
 
-[travis-image]:https://img.shields.io/travis/riot/lazy.svg?style=flat-square
-[travis-url]:https://travis-ci.org/riot/lazy
+[ci-image]:https://img.shields.io/github/workflow/status/riot/lazy/test?style=flat-square
+[ci-url]:https://github.com/riot/lazy/actions
 
 [license-image]:http://img.shields.io/badge/license-MIT-000000.svg?style=flat-square
 [license-url]:LICENSE.txt
