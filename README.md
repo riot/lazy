@@ -108,8 +108,8 @@ Lazy loading Riot.js components is recommended combined with [`@riotjs/route`](h
 [npm-downloads-image]:http://img.shields.io/npm/dm/@riotjs/lazy.svg?style=flat-square
 [npm-url]:https://npmjs.org/package/@riotjs/lazy
 
-[coverage-image]:https://img.shields.io/coveralls/riot/lazy/master.svg?style=flat-square
-[coverage-url]:https://coveralls.io/github/riot/lazy/?branch=master
+[coverage-image]:https://img.shields.io/coveralls/riot/lazy/main.svg?style=flat-square
+[coverage-url]:https://coveralls.io/github/riot/lazy/?branch=main
 
 [codeclimate-image]:https://api.codeclimate.com/v1/badges/be8992e6e7549e6b72a1/maintainability
 [codeclimate-url]:https://codeclimate.com/github/riot/lazy/maintainability
