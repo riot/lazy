@@ -34,5 +34,8 @@
     "rollup": "^2.53.3",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-terser": "^7.0.2"
+  },
+  "dependencies": {
+    "@riotjs/util": "^2.0.4"
   }
 }
