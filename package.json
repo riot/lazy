@@ -13,8 +13,6 @@
   "scripts": {
     "lint": "eslint index.next.js test/**/*.js rollup.config.js",
     "build": "rollup -c",
-    "cov-submit": "LAZY_COV=1 cat ./coverage/lcov.info | coveralls",
-    "cov-report": "nyc report --reporter=lcov --reporter=text",
     "pretest": "npm run build",
     "test": "npm run lint && nyc mocha -r esm -r test/setup.js test/index.js",
     "prepublishOnly": "npm test"
@@ -23,18 +21,17 @@
   "license": "MIT",
   "devDependencies": {
     "@riotjs/babel-preset": "^1.0.0",
-    "@riotjs/ssr": "^5.0.0",
-    "chai": "^4.2.0",
-    "coveralls": "^3.1.0",
-    "eslint": "^7.13.0",
+    "@riotjs/ssr": "^7.0.0",
+    "chai": "^4.3.4",
+    "eslint": "^7.31.0",
     "eslint-config-riot": "^3.0.0",
     "esm": "^3.2.25",
-    "jsdom": "16.4.0",
+    "jsdom": "16.6.0",
     "jsdom-global": "3.0.2",
-    "mocha": "^8.2.1",
+    "mocha": "^8.4.0",
     "nyc": "^15.1.0",
-    "riot": "^5.0.0",
-    "rollup": "^2.33.2",
+    "riot": "^6.0.1",
+    "rollup": "^2.53.3",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-terser": "^7.0.2"
   }

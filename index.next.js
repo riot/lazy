@@ -1,4 +1,5 @@
 import { component, pure } from 'riot'
+import { cleanNode } from '@riotjs/util/dom'
 
 // this object will contain all the components implementations lazy loaded
 const cache = new WeakMap()
@@ -18,10 +19,7 @@ lazy.export = function lazyExport(Loader, Component) {
     mount(el, parentScope) {
       this.el = el
       this.isMounted = true
-      const mount = () => {
-        this.mountLazyComponent(parentScope)
-        this.el.dispatchEvent(new Event('load'))
-      }
+      const mount = () => this.mountLazyComponent(parentScope)
 
       if (cachedComponent) {
         mount()
@@ -44,8 +42,12 @@ lazy.export = function lazyExport(Loader, Component) {
       if (!this.isMounted) return
 
       // unmount the loader if it was previously created
-      // notice the true flat to keep the root node
-      if (this.component) this.component.unmount(true)
+      if (this.component) {
+        // unmount the bindings
+        this.component.unmount()
+        // clean the DOM
+        cleanNode(this.el)
+      }
 
       // replace the old component instance with the new lazy loaded component
       this.createManagedComponent(cache.get(LazyComponent), parentScope)
