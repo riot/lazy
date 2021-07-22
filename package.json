@@ -14,6 +14,8 @@
     "lint": "eslint index.next.js test/**/*.js rollup.config.js",
     "build": "rollup -c",
     "pretest": "npm run build",
+    "cov": "nyc report --reporter=lcov",
+    "cov-html": "nyc report --reporter=html",
     "test": "npm run lint && nyc mocha -r esm -r test/setup.js test/index.js",
     "prepublishOnly": "npm test"
   },
