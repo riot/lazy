@@ -46,10 +46,10 @@ lazy.export = function lazyExport(Loader, Component) {
 
       // unmount the loader if it was previously created
       if (this.component) {
-        // unmount the bindings
-        this.component.unmount()
+        // unmount the bindings (keeping the root node)
+        this.component.unmount(true)
         // clean the DOM
-        cleanNode(this.el)
+        if (this.el.children.length) cleanNode(this.el)
       }
 
       // replace the old component instance with the new lazy loaded component
