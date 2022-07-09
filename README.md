@@ -1,5 +1,7 @@
 # Riot Lazy
 
+[![Riot.js lazy logo](https://raw.githubusercontent.com/riot/branding/main/lazy/lazy-horizontal.svg)](https://github.com/riot/lazy/)
+
 [![Build Status][ci-image]][ci-url] [![Code Quality][codeclimate-image]][codeclimate-url] [![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-image]][npm-url] [![MIT License][license-image]][license-url] [![Coverage Status][coverage-image]][coverage-url]
 
 > Lazy wrapper for Riot.js components
