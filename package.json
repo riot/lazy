@@ -1,6 +1,6 @@
 {
   "name": "@riotjs/lazy",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Lazy components loader for Riot.js",
   "main": "lazy.js",
   "jsnext:main": "index.next.js",
