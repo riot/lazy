@@ -3,6 +3,9 @@ logs
 *.log
 npm-debug.log*
 
+# Editor files
+.idea
+
 # Runtime data
 pids
 *.pid
@@ -42,3 +45,4 @@ jspm_packages
 # Ignore output file
 lazy.js
 lazy.min.js
+
