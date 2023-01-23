@@ -100,7 +100,7 @@ Lazy loading Riot.js components is recommended combined with [`@riotjs/route`](h
 </app>
 ```
 
-[ci-image]:https://img.shields.io/github/workflow/status/riot/lazy/test?style=flat-square
+[ci-image]:https://img.shields.io/github/actions/workflow/status/riot/lazy/test.yml?style=flat-square
 [ci-url]:https://github.com/riot/lazy/actions
 
 [license-image]:http://img.shields.io/badge/license-MIT-000000.svg?style=flat-square
