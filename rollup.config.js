@@ -1,29 +1,20 @@
-import babel from 'rollup-plugin-babel'
-import { terser } from 'rollup-plugin-terser'
-
-const globals = { 'riot': 'riot' }
+const globals = { riot: 'riot', '@riotjs/util/dom': 'riotUtil' }
 
 export default {
   input: 'index.next.js',
-  external: ['riot'],
-  plugins: [
-    babel({
-      presets: ['@riotjs/babel-preset']
-    })
-  ],
+  external: ['riot', '@riotjs/util/dom'],
   output: [
     {
       name: 'lazy',
-      file: 'lazy.js',
+      file: 'index.cjs',
       format: 'umd',
-      globals
+      globals,
     },
     {
       name: 'lazy',
-      file: 'lazy.min.js',
-      format: 'umd',
+      file: 'index.js',
+      format: 'esm',
       globals,
-      plugins: [terser()]
-    }
-  ]
+    },
+  ],
 }

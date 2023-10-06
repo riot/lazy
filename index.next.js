@@ -12,7 +12,10 @@ lazy.export = function lazyExport(Loader, Component) {
   // it could be that the user don't want to use a loader for whatever reason
   const hasLoader = Loader && Component
   const LazyComponent = hasLoader ? Component : Loader
-  const load = () => typeof LazyComponent === 'function' ? LazyComponent() : Promise.resolve(LazyComponent)
+  const load = () =>
+    typeof LazyComponent === 'function'
+      ? LazyComponent()
+      : Promise.resolve(LazyComponent)
   const cachedComponent = cache.get(LazyComponent)
 
   return pure(({ slots, attributes, props }) => ({
@@ -29,7 +32,7 @@ lazy.export = function lazyExport(Loader, Component) {
       } else {
         if (hasLoader) this.createManagedComponent(Loader, parentScope)
 
-        load().then(data => {
+        load().then((data) => {
           cache.set(LazyComponent, data.default || data)
           mount()
         })
@@ -37,7 +40,9 @@ lazy.export = function lazyExport(Loader, Component) {
     },
     createManagedComponent(Child, parentScope) {
       this.component = component(Child)(this.el, props, {
-        attributes, slots, parentScope
+        attributes,
+        slots,
+        parentScope,
       })
     },
     mountLazyComponent(parentScope) {
@@ -56,19 +61,20 @@ lazy.export = function lazyExport(Loader, Component) {
       this.createManagedComponent(cache.get(LazyComponent), parentScope)
     },
     update(parentScope) {
-      if (this.isMounted && this.component) this.component.update({}, parentScope)
+      if (this.isMounted && this.component)
+        this.component.update({}, parentScope)
     },
     unmount(...args) {
       this.isMounted = false
 
       if (this.component) this.component.unmount(...args)
-    }
+    },
   }))
 }
 
 export default function lazy(Loader, Component) {
   return {
     name: 'lazy',
-    exports: lazy.export(Loader, Component)
+    exports: lazy.export(Loader, Component),
   }
 }

@@ -2,22 +2,22 @@ import ComponentWithLoadListener from './components/component-with-load-listener
 import ComponentWithSlotWrapper from './components/component-with-slot-wrapper.riot'
 import UserWrapper from './components/user-wrapper.riot'
 import UserWrapperWithoutLoader from './components/user-wrapper-without-loader.riot'
-import {component} from 'riot'
-import {expect} from 'chai'
-import lazy from '../index.next'
+import { component } from 'riot'
+import { expect } from 'chai'
+import lazy from '../index.next.js'
 
 const defer = () => Promise.resolve().then.bind(Promise.resolve())
 
 describe('lazy', () => {
-  it('it\'s ok being lazy', () => {
+  it("it's ok being lazy", () => {
     // istn't that funny :D
     expect(lazy).to.be.ok
   })
 
-  it('Components with loader can be lazily loaded', async function() {
+  it('Components with loader can be lazily loaded', async function () {
     const div = document.createElement('div')
     const el = component(UserWrapper)(div, {
-      name: 'Gianluca'
+      name: 'Gianluca',
     })
 
     const loaderP = el.$('p')
@@ -31,10 +31,10 @@ describe('lazy', () => {
     el.unmount()
   })
 
-  it('Components without loader can be lazily loaded', async function() {
+  it('Components without loader can be lazily loaded', async function () {
     const div = document.createElement('div')
     const el = component(UserWrapperWithoutLoader)(div, {
-      name: 'Gianluca'
+      name: 'Gianluca',
     })
 
     await defer()
@@ -45,10 +45,10 @@ describe('lazy', () => {
     el.unmount()
   })
 
-  it('Components having slots can be lazily loaded', async function() {
+  it('Components having slots can be lazily loaded', async function () {
     const div = document.createElement('div')
     const el = component(ComponentWithSlotWrapper)(div, {
-      greeting: 'Hello'
+      greeting: 'Hello',
     })
 
     const loaderP = el.$('p')
@@ -62,10 +62,10 @@ describe('lazy', () => {
     el.unmount()
   })
 
-  it('Lazy loaded component can dispatch load event', async function() {
+  it('Lazy loaded component can dispatch load event', async function () {
     const div = document.createElement('div')
     const el = component(ComponentWithLoadListener)(div, {
-      name: 'Kal'
+      name: 'Kal',
     })
 
     await defer()
