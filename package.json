@@ -19,7 +19,7 @@
     "cov": "c8 report --reporter=lcov",
     "cov-html": "c8 report --reporter=html",
     "test": "npm run lint && NODE_OPTIONS=\"--loader @riotjs/register\" c8 mocha -r jsdom-global/register test/index.js",
-    "prepublishOnly": "npm build && npm test"
+    "prepublishOnly": "npm run build && npm test"
   },
   "author": "Gianluca Guarini <gianluca.guarini@gmail.com> (https://gianlucaguarini.com)",
   "license": "MIT",
