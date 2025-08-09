@@ -1,5 +1,5 @@
 <user-wrapper>
-  <user name={props.name}/>
+  <user name={state.name} />
 
   <script>
     import Loader from './loader.riot'
@@ -9,6 +9,12 @@
     export default {
       components: {
         user: lazy(Loader, () => Promise.resolve(User))
+      },
+      state: {
+        name: ''
+      },
+      onBeforeMount(props) {
+        this.state.name = props.name
       }
     }
   </script>

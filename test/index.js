@@ -45,6 +45,24 @@ describe('lazy', () => {
     el.unmount()
   })
 
+  it('Components can be updated', async function () {
+    const div = document.createElement('div')
+    const el = component(UserWrapper)(div, {
+      name: 'Gianluca',
+    })
+
+    await defer()
+
+    const p = el.$('p')
+    expect(p.innerHTML).to.be.equal('Gianluca')
+
+    el.update({ name: 'Daniele' })
+
+    expect(p.innerHTML).to.be.equal('Daniele')
+
+    el.unmount()
+  })
+
   it('Components having slots can be lazily loaded', async function () {
     const div = document.createElement('div')
     const el = component(ComponentWithSlotWrapper)(div, {
