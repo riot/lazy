@@ -9,7 +9,7 @@ lazy.cache = cache
 
 // static attribute in case we want to just export a lazy riot component
 lazy.export = function lazyExport(Loader, Component) {
-  // it could be that the user don't want to use a loader for whatever reason
+  // it could be that the user doesn't want to use a loader for whatever reason
   const hasLoader = Loader && Component
   const LazyComponent = hasLoader ? Component : Loader
   const load = () =>
