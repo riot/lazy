@@ -18,31 +18,31 @@
     "build": "rollup -c",
     "cov": "c8 report --reporter=lcov",
     "cov-html": "c8 report --reporter=html",
-    "test": "npm run lint && NODE_OPTIONS=\"--loader @riotjs/register\" c8 mocha -r jsdom-global/register test/index.js",
+    "test": "npm run lint && c8 mocha -r test/setup.js -r jsdom-global/register test/index.js",
     "prepublishOnly": "npm run build && npm test"
   },
   "author": "Gianluca Guarini <gianluca.guarini@gmail.com> (https://gianlucaguarini.com)",
   "license": "MIT",
   "devDependencies": {
-    "@riotjs/compiler": "^9.0.6",
+    "@riotjs/compiler": "10.0.0-beta.2",
     "@riotjs/prettier-config": "^1.1.0",
-    "@riotjs/register": "^9.0.0",
-    "@rollup/plugin-node-resolve": "^15.2.2",
-    "c8": "^8.0.1",
-    "chai": "^4.3.10",
-    "eslint": "^8.51.0",
-    "eslint-config-riot": "^4.1.1",
-    "jsdom": "22.1.0",
+    "@riotjs/register": "10.0.0-beta.2",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "c8": "^10.1.3",
+    "chai": "^5.2.1",
+    "eslint": "^9.33.0",
+    "eslint-config-riot": "^5.0.2",
+    "jsdom": "26.1.0",
     "jsdom-global": "3.0.2",
-    "mocha": "^10.2.0",
-    "prettier": "^3.0.3",
-    "riot": "^9.0.4",
-    "rollup": "^4.0.2"
+    "mocha": "^11.7.1",
+    "prettier": "^3.6.2",
+    "riot": "10.0.0-rc.1",
+    "rollup": "^4.46.2"
   },
   "peerDependencies": {
-    "riot": "^6.0.0 || ^7.0.0 || ^9.0.0"
+    "riot": "^6.0.0 || ^7.0.0 || ^9.0.0 || ^10.0.0"
   },
   "dependencies": {
-    "@riotjs/util": "^2.2.3"
+    "@riotjs/util": "^10.0.0"
   }
 }

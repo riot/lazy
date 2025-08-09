@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ main, dev ]
 
+permissions:
+  contents: read
+
 jobs:
   build:
 
@@ -13,21 +16,21 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x, 19.x]
+        node-version: [22.x, 24.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
       - uses: actions/checkout@v2
       - name: Local Unit Test ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm i
       - run: npm test
       - name: Generate Coverage
-        if: ${{ success() && github.event_name != 'pull_request' && matrix.node-version == '19.x' }}
+        if: ${{ success() && github.event_name != 'pull_request' && matrix.node-version == '22.x' }}
         run: npm run cov
       - name: Coveralls
-        if: ${{ success() && github.event_name != 'pull_request' && matrix.node-version == '19.x' }}
+        if: ${{ success() && github.event_name != 'pull_request' && matrix.node-version == '22.x' }}
         uses: coverallsapp/github-action@master
         with:
           path-to-lcov: ./coverage/lcov.info
