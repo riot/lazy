@@ -2,16 +2,15 @@ name: test
 
 on:
   push:
-    branches: [ main, dev ]
+    branches: [main, dev]
   pull_request:
-    branches: [ main, dev ]
+    branches: [main, dev]
 
 permissions:
   contents: read
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -29,9 +28,9 @@ jobs:
       - name: Generate Coverage
         if: ${{ success() && github.event_name != 'pull_request' && matrix.node-version == '22.x' }}
         run: npm run cov
-      - name: Coveralls
+      - name: Code Quality
         if: ${{ success() && github.event_name != 'pull_request' && matrix.node-version == '22.x' }}
-        uses: coverallsapp/github-action@master
+        uses: qltysh/qlty-action/coverage@v1
         with:
-          path-to-lcov: ./coverage/lcov.info
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.QLTY_COVERAGE_TOKEN }}
+          files: coverage/lcov.info

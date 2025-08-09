@@ -6,7 +6,6 @@
 
 > Lazy wrapper for Riot.js components
 
-
 ## Table of Contents
 
 - [Install](#install)
@@ -100,18 +99,14 @@ Lazy loading Riot.js components is recommended combined with [`@riotjs/route`](h
 </app>
 ```
 
-[ci-image]:https://img.shields.io/github/actions/workflow/status/riot/lazy/test.yml?style=flat-square
-[ci-url]:https://github.com/riot/lazy/actions
-
-[license-image]:http://img.shields.io/badge/license-MIT-000000.svg?style=flat-square
-[license-url]:LICENSE.txt
-
-[npm-version-image]:http://img.shields.io/npm/v/@riotjs/lazy.svg?style=flat-square
-[npm-downloads-image]:http://img.shields.io/npm/dm/@riotjs/lazy.svg?style=flat-square
-[npm-url]:https://npmjs.org/package/@riotjs/lazy
-
-[coverage-image]:https://img.shields.io/coveralls/riot/lazy/main.svg?style=flat-square
-[coverage-url]:https://coveralls.io/github/riot/lazy/?branch=main
-
-[codeclimate-image]:https://api.codeclimate.com/v1/badges/be8992e6e7549e6b72a1/maintainability
-[codeclimate-url]:https://codeclimate.com/github/riot/lazy/maintainability
+[ci-image]: https://img.shields.io/github/actions/workflow/status/riot/lazy/test.yml?style=flat-square
+[ci-url]: https://github.com/riot/lazy/actions
+[license-image]: http://img.shields.io/badge/license-MIT-000000.svg?style=flat-square
+[license-url]: LICENSE.txt
+[npm-version-image]: http://img.shields.io/npm/v/@riotjs/lazy.svg?style=flat-square
+[npm-downloads-image]: http://img.shields.io/npm/dm/@riotjs/lazy.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/@riotjs/lazy
+[coverage-image]: https://qlty.sh/gh/riot/projects/lazy/coverage.svg
+[coverage-url]: https://qlty.sh/gh/riot/projects/lazy
+[codeclimate-image]: https://qlty.sh/gh/riot/projects/lazy/maintainability.svg
+[codeclimate-url]: https://qlty.sh/gh/riot/projects/lazy
