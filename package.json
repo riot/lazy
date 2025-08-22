@@ -1,6 +1,6 @@
 {
   "name": "@riotjs/lazy",
-  "version": "10.0.0-rc.1",
+  "version": "10.0.0",
   "description": "Lazy components loader for Riot.js",
   "type": "module",
   "main": "index.js",
